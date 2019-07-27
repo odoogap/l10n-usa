@@ -10,7 +10,8 @@ class TestChartAcount(TransactionCase):
         chart_us.try_loading_for_current_company()
         bank_account = self.env['account.account'].search(
             [('code', '=', '111101')])
-        liquidity_transfer = self.env['account.account'].search([('code', '=', '111901')])
+        liquidity_transfer = self.env['account.account'].search(
+            [('code', '=', '111901')])
         finished_goods = self.env['account.account'].search([('code', '=', '133000')])
         self.assertEqual(bank_account.name, 'Bank')
         self.assertEqual(liquidity_transfer.name, 'Liquidity Transfer')
